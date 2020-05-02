@@ -11,27 +11,7 @@
 <body>
 
     <div id="app" class="container mt-5">
-
-        <!--DEVUELVE TEXTO ALREVES-->
-
-        <h3>{{mensaje}}</h3>
-        <h3>invertido : {{invertido}}</h3>
-
-        <input type="text" class="form-control mt-2" v-model="mensaje">
-        <hr>
-
-        <!--CONTADOR CON DIAGRAMA (BARRA PROGRESIVA , BOOSTRAP)-->
-
-        <button class="btn btn-primary" @click="(contador != 100 ? contador++ : contador == 100)">+</button>
-        <button class="btn btn-danger" @click="(contador != 0 ? contador-- : contador == 0)">-</button>
-
-        <input class="form-control-sm ml-2" v-model="contador">   
-
-        <div class="progress mt-2">
-            <div class="progress-bar" role="progressbar" :style="{'width': contador+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" :class="color">
-                {{contador}}%
-            </div>
-        </div>
+         <h3>{{saludo}}</h3>   
     </div>
 
     

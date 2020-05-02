@@ -1,23 +1,31 @@
 const app = new Vue({
     el: '#app',
     data: { 
-        mensaje:'hola mundo',
-        contador:0
+        saludo : "soy ciclo de vida de Vue"
     },
-    methods: {
-
+    beforeCreate(){
+        console.log('beforeCreated');
     },
-    computed: {
-        invertido(){
-            return this.mensaje.split('').reverse().join("");   
-        },
-        color(){
-            return {
-                'bg-primary' : this.contador <= 10,
-                'bg-success' : this.contador > 10,
-                'bg-warning' : this.contador > 50,
-                'bg-danger' : this.contador > 80    
-            }
-        }
+    create(){
+        console.log('created');
+    },
+    beforeMount(){
+        console.log('beforeMount');
+    },
+    mounted(){
+        console.log('mounted');
+    },
+    beforeUpdate(){
+        console.log('beforeUpdate');
+    },
+    updated(){
+        console.log('updated');
+    },
+    beforeDestroy(){
+        console.log('beforeDestroy');
+    },
+    destroyed(){
+        console.log('destroyed');
     }
+
 });
