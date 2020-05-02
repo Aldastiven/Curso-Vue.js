@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h1>{{titulo}}</h1>
+
+        <input type="text" v-model = "nuevaFruta" @keyup.enter = "agregarFruta">
+
+        <button @click = "agregarFruta">Agregar</button>
+
+        <ul>
+            <li v-for = "fruta of frutas">
+                <input type="number" v-model.number = "cantidad  - fruta.cantidad">
+                {{fruta.nombre}}
+                <button @click = "fruta.cantidad++">+</button>
+                <button @click = "fruta.cantidad--">-</button>
+                <span v-if = "fruta.cantidad === 0">- sin frutas</span>
+            </li>
+        </ul>
+
+        <h2>Total de frutas : {{sumarCantidad}}</h2>    
+    </div>
+
+    
+
+    <!--implementacion vue.js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="script.js"> </script>
+</body>
+
+</html>
